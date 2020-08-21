@@ -123,7 +123,8 @@ namespace DiscordBot.Commands {
                         }
                         // If last name doesn't match
                         else {
-                            discordMessage = discordMessage + $"{firstName} {lastName} could not be found in the server\n";
+                            if(!discordMessage.Contains($"{origNames[i, 0]} {origNames[i, 1]} has no last name matches\n"))
+                                discordMessage = discordMessage + $"{origNames[i, 0]} {origNames[i, 1]} has no last name matches\n";
                         }
                     }
                 }   
